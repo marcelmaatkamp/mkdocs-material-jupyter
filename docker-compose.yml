@@ -2,7 +2,7 @@ version: "3.8"
 services:
 
   jupyter:
-    image: marcelmaatkamp/mkdocs-material-jupyter:${MKDOCS_MATERIAL_VERSION}
+    image: ghcr.io/marcelmaatkamp/mkdocs-material-jupyter:${MKDOCS_MATERIAL_VERSION}
     # user: ${UID}:${GID}
     entrypoint: jupyter
   # command: --version # labs --ip 0.0.0.0 --no-browser --NotebookApp.token=''
@@ -13,7 +13,7 @@ services:
       - ./docs:/docs
 
   mkdocs:
-    image: marcelmaatkamp/mkdocs-material-jupyter:${MKDOCS_MATERIAL_VERSION}
+    image: ghcr.io/marcelmaatkamp/mkdocs-material-jupyter:${MKDOCS_MATERIAL_VERSION}
     build:
       context: .
       args:
