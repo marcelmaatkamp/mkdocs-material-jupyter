@@ -1,2 +1,2 @@
-# mkdocs-jupyter
-mkdocs jupyter base image
+# mkdocs-material-jupyter
+mkdocs-material with jupyter as base image
