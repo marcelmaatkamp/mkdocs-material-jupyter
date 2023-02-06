@@ -1,0 +1,28 @@
+version: "3.8"
+services:
+
+  jupyter:
+    image: marcelmaatkamp/mkdocs-material-jupyter:${MKDOCS_MATERIAL_VERSION}
+    # user: ${UID}:${GID}
+    entrypoint: jupyter
+  # command: --version # labs --ip 0.0.0.0 --no-browser --NotebookApp.token=''
+    command: lab --ip 0.0.0.0 --no-browser --NotebookApp.token=''
+    ports:
+      - 8888:8888
+    volumes:
+      - ./docs:/docs
+
+  mkdocs:
+    image: marcelmaatkamp/mkdocs-material-jupyter:${MKDOCS_MATERIAL_VERSION}
+    build:
+      context: .
+      args:
+        JUPYTER_VERSION: ${JUPYTER_VERSION}
+        MKDOCS_MATERIAL_VERSION: ${MKDOCS_MATERIAL_VERSION}
+    ports:
+      - 8000:8000
+    volumes:
+      - .:/docs/
+      - /Users/marcel/.ssh/id_rsa:/home/jovyan/.ssh/id_rsa:ro
+      - /Users/marcel/.ssh/id_rsa.pub:/home/jovyan/.ssh/id_rsa.pub:ro
+
