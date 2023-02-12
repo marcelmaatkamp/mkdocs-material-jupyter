@@ -35,11 +35,11 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64,linux/arm64
           build-args: |
-            JUPYTER_VERSION=${{env.JUPYTER_VERSION}}
-            MKDOCS_MATERIAL_VERSION=${{env.MKDOCS_MATERIAL_VERSION}}
+            JUPYTER_VERSION=${{ vars.JUPYTER_VERSION }}
+            MKDOCS_MATERIAL_VERSION=${{ vars.MKDOCS_MATERIAL_VERSION }}
           push: true
           tags: |
-            marcelmaatkamp/mkdocs-material-jupyter:9.0.12
+            marcelmaatkamp/mkdocs-material-jupyter:${{ vars.MKDOCS_MATERIAL_VERSION }}
             marcelmaatkamp/mkdocs-material-jupyter:latest
-            ghcr.io/marcelmaatkamp/mkdocs-material-jupyter:9.0.12
+            ghcr.io/marcelmaatkamp/mkdocs-material-jupyter:${{ vars.MKDOCS_MATERIAL_VERSION }}
             ghcr.io/marcelmaatkamp/mkdocs-material-jupyter:latest
