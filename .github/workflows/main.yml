@@ -7,16 +7,14 @@ on:
 
 jobs:
 
-  build:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-#   - name: Build the Docker image
-#     run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
-    - uses: pennsignals/publish_docker-compose@v0.1.0
-      with:
-        docker_compose: 'docker-compose.yml'
-        repo_token: "${{ secrets.GITHUB_TOKEN }}"
+#  build:
+#    runs-on: ubuntu-latest
+#    steps:
+#    - uses: actions/checkout@v3
+#    - uses: pennsignals/publish_docker-compose@v0.1.0
+#      with:
+#        docker_compose: 'docker-compose.yml'
+#        repo_token: "${{ secrets.GITHUB_TOKEN }}"
         
   push_to_registry:
     name: Push Docker image to Docker Hub
