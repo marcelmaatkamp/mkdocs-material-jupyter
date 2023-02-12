@@ -1,4 +1,4 @@
-low File
+
 name: Dynamic Template
 
 on:
@@ -23,10 +23,8 @@ jobs:
       - name: "💫  Dynamic Template Render"
         uses: varunsridharan/action-dynamic-readme@main
         with:
-          GLOBAL_TEMPLATE_REPOSITORY: {repository-owner}/{repository-name}
+          global_template_repository: varunsridharan/varunsridharan
           files: |
-            FILE.md
-            FILE2.md=output_filename.md
-            folder1/file.md=folder2/output.md
+            README.md
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
