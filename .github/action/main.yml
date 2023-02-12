@@ -1,0 +1,15 @@
+on:
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test-compose-action:
+    runs-on: ubuntu-latest
+    name: test compose action
+    steps:
+      - uses: pennsignals/publish_docker-compose@v0.1.0
+        with:
+          docker_compose: 'docker-compose.yml'
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
