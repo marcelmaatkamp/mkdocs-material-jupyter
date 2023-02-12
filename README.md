@@ -1,4 +1,4 @@
-# (ubuntu-based) mkdocs-material with jupyter base image
+# (ubuntu-based) mkdocs-material base image with jupyter notebook
 This repo builds a ubuntu-based mkdocs-material with jupyter included. The originsl repo [squidfunk/mkdocs-material](https://github.com/squidfunk/mkdocs-material) is alpine based which conflict with alot of (interactive) visualisation plugins like [PyVista](https://docs.pyvista.org/) in jupyter notebook. 
 
 This repo builds the following docker base image containers:
