@@ -35,8 +35,8 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64,linux/arm64
           build-args: |
-            JUPYTER_VERSION=${{secrets.JUPYTER_VERSION}}
-            MKDOCS_MATERIAL_VERSION=${{secrets.MKDOCS_MATERIAL_VERSION}}
+            JUPYTER_VERSION=${{env.JUPYTER_VERSION}}
+            MKDOCS_MATERIAL_VERSION=${{env.MKDOCS_MATERIAL_VERSION}}
           push: true
           tags: |
             marcelmaatkamp/mkdocs-material-jupyter:9.0.12
