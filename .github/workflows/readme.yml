@@ -3,8 +3,9 @@ name: Dynamic Template
 
 on:
   push:
-    branches:
-      - main
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
 #  workflow_dispatch:
 
 jobs:
