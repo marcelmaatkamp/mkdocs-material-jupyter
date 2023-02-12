@@ -5,6 +5,8 @@ services:
     image: ghcr.io/marcelmaatkamp/mkdocs-material-jupyter:${MKDOCS_MATERIAL_VERSION}
     # user: ${UID}:${GID}
     entrypoint: jupyter
+    depends_on: 
+      - mkdocs
   # command: --version # labs --ip 0.0.0.0 --no-browser --NotebookApp.token=''
     command: lab --ip 0.0.0.0 --no-browser --NotebookApp.token=''
     ports:
