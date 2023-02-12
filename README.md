@@ -2,7 +2,7 @@
 
 [![Docker Image CI](https://github.com/marcelmaatkamp/mkdocs-material-jupyter/actions/workflows/main.yml/badge.svg)](https://github.com/marcelmaatkamp/mkdocs-material-jupyter/actions/workflows/main.yml)
 
-Builds [ghcr.io/marcelmaatkamp/mkdocs-material-jupyter:${{MKDOCS_MATERIAL_VERSION}}](ghcr.io/marcelmaatkamp/mkdocs-material-jupyter:${{MKDOCS_MATERIAL_VERSION}})
+Builds [ghcr.io/marcelmaatkamp/mkdocs-material-jupyter:](ghcr.io/marcelmaatkamp/mkdocs-material-jupyter:)
 
 This repo builds a ubuntu-based mkdocs-material with jupyter included. The originsl repo [squidfunk/mkdocs-material](https://github.com/squidfunk/mkdocs-material) is alpine based which conflict with alot of (interactive) visualisation plugins like [PyVista](https://docs.pyvista.org/) in jupyter notebook. 
 
