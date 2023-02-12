@@ -10,9 +10,9 @@ name: Publish Docker image
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "x" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "x" ]
     
 jobs:
   push_to_registry:
