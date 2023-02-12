@@ -1,4 +1,4 @@
-# (ubuntu-based) mkdocs-material base image with jupyter notebook
+# Ubuntu-based mkdocs-material base-image, with Jupyter notebook included
 
 [![Docker Image CI](https://github.com/marcelmaatkamp/mkdocs-material-jupyter/actions/workflows/main.yml/badge.svg)](https://github.com/marcelmaatkamp/mkdocs-material-jupyter/actions/workflows/main.yml)
 
