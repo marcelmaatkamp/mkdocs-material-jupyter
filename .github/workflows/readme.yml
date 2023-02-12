@@ -25,6 +25,6 @@ jobs:
         with:
           global_template_repository: varunsridharan/varunsridharan
           files: |
-            README.md
+            _README.md=README.md
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
