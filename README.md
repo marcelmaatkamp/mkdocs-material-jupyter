@@ -22,11 +22,11 @@ Repos extending this base image are:
 $ docker-compose up jupyter
 ```
 http://127.0.0.1:8888
-![jupyter](images/jupyter.png)
+![jupyter]([images/jupyter.png](https://raw.githubusercontent.com/marcelmaatkamp/mkdocs-material-jupyter/master/images/jupyter.png))
 
 ### mkdocs 
 ```bash
 $ docker-compose up mkdocs
 ```
 http://127.0.0.1:8000/mkdocs-material/reference/
-![mkdocs](images/mkdocs.png)
+![mkdocs]([images/mkdocs.png](https://raw.githubusercontent.com/marcelmaatkamp/mkdocs-material-jupyter/master/images/mkdocs.png))
