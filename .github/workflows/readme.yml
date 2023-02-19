@@ -1,22 +1,12 @@
-
 name: Dynamic Template
 
 on:
   push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
-#  workflow_dispatch:
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
-
-  generate_env:
-    name: "Generates .env file"
-    runs-on: ubuntu-latest
-    steps:
-      - name: Create .env file based on Github Secrets
-        uses: ozaytsev86/create-env-file-action@v1
-
   update_templates:
     name: "Update Templates"
     runs-on: ubuntu-latest
@@ -32,8 +22,44 @@ jobs:
       - name: "💫  Dynamic Template Render"
         uses: varunsridharan/action-dynamic-readme@main
         with:
-          global_template_repository: varunsridharan/varunsridharan
+          GLOBAL_TEMPLATE_REPOSITORY: "${{ github.event.repository.name }}"
           files: |
             _README.md=README.md
+          committer_name: github-actions[bot]
+          committer_email: github-actions[bot]@users.noreply.github.com
+          commit_message: 'docs: update readme file [skip ci]'
+          confirm_and_push: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create pull request
+        id: cpr
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'docs: documentation files updated [skip ci]'
+          committer: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
+          author: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
+          signoff: false
+          branch: github-actions/repository-maintenance
+          delete-branch: true
+          title: Update documentation files
+          body: All documentation files has been updated to last recent version
+          labels: |
+            skip-changelog
+            docs
+
+      - name: Enable pull request automerge
+        if: steps.cpr.outputs.pull-request-operation == 'created'
+        uses: peter-evans/enable-pull-request-automerge@v1
+        with:
+          token: ${{ secrets.PAT }}
+          pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
+
+      - name: Auto approve
+        if: steps.cpr.outputs.pull-request-operation == 'created'
+        uses: juliangruber/approve-pull-request-action@v1
+        with:
+          github-token: ${{ secrets.PAT }}
+          number: ${{ steps.cpr.outputs.pull-request-number }}
+          
