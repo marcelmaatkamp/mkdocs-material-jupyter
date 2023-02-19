@@ -22,7 +22,7 @@ jobs:
       - name: "💫  Dynamic Template Render"
         uses: varunsridharan/action-dynamic-readme@main
         with:
-          GLOBAL_TEMPLATE_REPOSITORY: {repository-owner}/{repository-name}
+          GLOBAL_TEMPLATE_REPOSITORY: "${{ github.event.repository.name }}"
           files: |
             _README.md=README.md
           committer_name: github-actions[bot]
