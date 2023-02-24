@@ -24,6 +24,5 @@ services:
     ports:
       - 8000:8000
     volumes:
-      - .:/docs/
-      - /Users/marcel/.ssh/id_rsa:/home/jovyan/.ssh/id_rsa:ro
+      - ~/.ssh/id_rsa:/home/jovyan/.ssh/id_rsa:ro
 
