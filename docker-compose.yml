@@ -23,6 +23,4 @@ services:
         name: mkdocs
     ports:
       - 8000:8000
-    volumes:
-      - ~/.ssh/id_rsa:/home/jovyan/.ssh/id_rsa:ro
 
