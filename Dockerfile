@@ -6,7 +6,7 @@ RUN \
    git clone --single-branch https://github.com/squidfunk/mkdocs-material  \
     -b ${MKDOCS_MATERIAL_VERSION}
 
-FROM jupyter/datascience-notebook:${JUPYTER_VERSION}
+FROM quay.io/jupyter/datascience-notebook:${JUPYTER_VERSION}
 COPY --from=base /home/jovyan/mkdocs-material/docs /home/jovyan/docs
 COPY --from=base /home/jovyan/mkdocs-material/material /home/jovyan/material
 COPY --from=base /home/jovyan/mkdocs-material/src /home/jovyan/src
