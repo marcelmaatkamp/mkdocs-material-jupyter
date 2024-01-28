@@ -1,5 +1,5 @@
 ARG JUPYTER_VERSION
-FROM jupyter/datascience-notebook:${JUPYTER_VERSION} as base
+FROM quay.io/jupyter/datascience-notebook:${JUPYTER_VERSION} as base
 
 ARG MKDOCS_MATERIAL_VERSION
 RUN \
